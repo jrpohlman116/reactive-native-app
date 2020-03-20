@@ -12,24 +12,26 @@ export default class LinksScreen extends React.Component {
     distance: '',
     listOfRestaurants: [],
     selectedRestaurant: '',
-    errorMessage: 'Hello World'
+    errorMessage: ''
   };
 
-  getRandomRestaurant = () => {
+  componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
-        const location = JSON.stringify(position);
-
-        this.setState({ lat : location.coords.latitude });
-        this.setState({ long : location.coords.longitude });
+        console.log(position.coords.latitude)
+        console.log(position.coords.longitude)
+        this.setState({ lat : position.coords.latitude });
+        this.setState({ long : position.coords.longitude });
       },
       error => this.setState({ errorMessage : error.message }),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
     );
+  }
 
+  getRandomRestaurant = () => {
     getRestaurantsAPI(this.state.lat, this.state.long)
-      .then(data => this.setState({listOfRestaurants: data.restaurants}))
-      .then(() => {
+    .then(data => this.setState({listOfRestaurants: data.restaurants}))
+    .then(() => {
         var randomNumber = Math.floor(Math.random() * this.state.listOfRestaurants.length);
         this.setState({selectedRestaurant: this.state.listOfRestaurants[randomNumber].restaurant.name})
       });
