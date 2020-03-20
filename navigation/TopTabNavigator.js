@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createMaterialTopTabNavigator  } from '@react-navigation/material-top-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import GenerateRandomRestuarant from '../screens/GenerateRandomRestaurant';
 import ListScreen from '../screens/ListScreen';
 
 const Tab = createMaterialTopTabNavigator();
@@ -24,8 +24,8 @@ export default function TopTabNavigator({ navigation, route }) {
         component={ListScreen}
       />
       <Tab.Screen
-        name="Settings"
-        component={LinksScreen}
+        name="Generator"
+        component={GenerateRandomRestuarant}
       />
     </Tab.Navigator>
   );
@@ -39,7 +39,7 @@ function getHeaderTitle(route) {
       return 'How to get started';
     case 'List':
       return 'List of Names';
-    case 'Settings':
-      return 'Settings';
+    case 'Generator':
+      return 'Generate a Random Restaurant';
   }
 }
