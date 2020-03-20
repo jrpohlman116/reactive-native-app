@@ -9,4 +9,4 @@ You can run npm to install the Expo CLI command line utility
 
 3. Run `npm install` to install all the necessary packages for the app to run
 
-4. Run `npm start' to launch the Expo server. This will bring up a tab on your brower at `http://localhost:19002/` with a QR code that can be scanned from your device on the Expo iOS or Android app. There are also other options to run it through a link via email or broswer, or you can run it on an emulator.
+4. Run `npm start` to launch the Expo server. This will bring up a tab on your brower at `http://localhost:19002/` with a QR code that can be scanned from your device on the Expo iOS or Android app. There are also other options to run it through a link via email or broswer, or you can run it on an emulator.
