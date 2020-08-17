@@ -1,4 +1,6 @@
 # reactive-native-app
+## Description
+Simple proof of concept app to try React Native as a technology and test out its performance. The general concept for the working portion of this app is a random restaurant generator based on location and given cuisine choice.
 
 ## Steps to Run
 1. Install the Expo client app on your iOS or Android phone and connect to the same wireless network as your computer. On Android, use the Expo app to scan the QR code from your terminal to open your project. On iOS, follow on-screen instructions to get a link.
